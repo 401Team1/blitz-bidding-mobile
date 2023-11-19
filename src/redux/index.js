@@ -1,5 +1,5 @@
 import { applyMiddleware, combineReducers, configureStore } from '@reduxjs/toolkit';
-import auctionReducer from './auction';
+import auctionReducer from './Auction';
 //import logger from './middlewares/logger';
 
 

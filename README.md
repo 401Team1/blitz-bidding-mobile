@@ -28,7 +28,7 @@ Users can participate in live auctions, place bids, and view auction status in r
 
 ## User Stories
 
-### As a User I want to be able to submit an item for auction.
+### As a User I want to be able to submit an item for auction
 
 **Feature Tasks:**
 
@@ -46,7 +46,7 @@ Ensure that user receives a success message if item is submitted, or error if no
 
 Size: Medium
 
-### As an Admin, I want to be able to approve or reject items for auction.
+### As an Admin, I want to be able to approve or reject items for auction
 
 **Feature Tasks:**
 
@@ -66,7 +66,7 @@ When item is approved or rejected, its status is updated in the db
 
 Size: Medium
 
-### As an Admin, I want to be able to start live auctions.
+### As an Admin, I want to be able to start live auctions
 
 **Feature Tasks:**
 
@@ -86,7 +86,7 @@ When countdown ends, auction is marked sold/not sold
 
 Size: Medium
 
-### As an Admin, I want to be able to complete live auctions and declare who won the item.
+### As an Admin, I want to be able to complete live auctions and declare who won the item
 
 **Feature Tasks:**
 
@@ -106,7 +106,7 @@ Item is marked as sold in db
 
 Size: Medium
 
-### As a User, I want to be able to join live auctions and make bids.
+### As a User, I want to be able to join live auctions and make bids
 
 **Feature Tasks:**
 
@@ -122,7 +122,7 @@ User bids can be accepted, and sent to admin/auctioneer
 
 Size: Medium
 
-### As a User, I want to be able to see lists of my auctions I've submitted and won.
+### As a User, I want to be able to see lists of my auctions I've submitted and won
 
 **Feature Tasks:**
 

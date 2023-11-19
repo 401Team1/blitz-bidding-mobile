@@ -1,10 +1,14 @@
-import { createStore, combineReducers } from 'redux';
+import { applyMiddleware, combineReducers, configureStore } from '@reduxjs/toolkit';
+import auctionReducer from './auction';
+//import logger from './middlewares/logger';
 
-import auctionReducer from './Auction';
 
 
-const reducer = combineReducers({ 
+const rootReducer = combineReducers({
     auction: auctionReducer,
-});
-
-export default createStore(reducer);
+  });
+  
+  //middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),  
+  export default configureStore({
+    reducer: rootReducer, 
+  });

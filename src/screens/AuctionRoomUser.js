@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { SafeAreaView, Text, TouchableOpacity } from 'react-native';
-import AuctionRoom from '../components/AuctionRoom'; // Import shared AuctionRoom component
-import ItemDetailModal from '../components/ItemDetailsModal'; // Correct path to your ItemDetailModal
+import AuctionRoom from '../components/AuctionRoom';
+import Header from '../components/header';
+import Footer from '../components/footer';
+import ItemDetailModal from '../components/ItemDetailsModal';
 import { useSelector, useDispatch } from 'react-redux';
-import { auctionEnded } from '../redux/Auction/index'; // Your action for ending the auction
+
 
 const AuctionRoomUser = () => {
     const { currentItem, maxBid } = useSelector(state => state.auction);
@@ -14,6 +16,7 @@ const AuctionRoomUser = () => {
 
     return (
         <SafeAreaView style={{ flex: 1 }}>
+            <Header />
             <TouchableOpacity onPress={() => setModalVisible(true)}>
                 <Text>{currentItem.name}</Text>
             </TouchableOpacity>
@@ -24,6 +27,7 @@ const AuctionRoomUser = () => {
                 visible={modalVisible}
                 onClose={() => setModalVisible(false)}
             />
+            <Footer />
         </SafeAreaView>
     );
 };

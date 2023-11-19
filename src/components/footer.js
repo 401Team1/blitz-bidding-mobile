@@ -1,13 +1,13 @@
 import React from "react";
-import { Text, Box, StyleSheet } from 'react-native'
+import { Text, View, StyleSheet } from 'react-native'
 
 export default function Footer() {
     return (
-        <Box stlye={styles.footer}>
+        <View style={styles.footer}>
             <Text style={styles.footerText}>
                 Blitz Bidding
             </Text>
-        </Box>
+        </View>
     )
 }
 
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     },
     footerText: {
         color: "white",
-        fontSize: "20",
+        fontSize: 20,
         fontWeight: "bold",
     }
 })

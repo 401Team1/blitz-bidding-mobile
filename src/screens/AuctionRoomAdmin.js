@@ -1,7 +1,7 @@
 import React from 'react';
 import { SafeAreaView, Text, TouchableOpacity, View } from 'react-native';
-import Header from '../components/header';
-import Footer from '../components/footer';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 import AuctionRoom from '../components/AuctionRoom';
 import { useSelector, useDispatch } from 'react-redux';
 import { startAuction, auctionEnded } from '../redux/Auction/index';

@@ -9,8 +9,6 @@ function AuthProvider( props ) {
     const [user, setUser] = useState({ username: 'josh' });
     const [error, setError] = useState(null);
     const [capabilities, setCapabilities] = useState(null);
-  
-    console.log('context user:', user);
 
     const login = (username, password) => {
       let defaultUserObj = { username, 

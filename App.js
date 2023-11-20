@@ -20,7 +20,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HeaderMenu from './src/components/HeaderMenu';
 import HeaderProfileMenu from './src/components/HeaderProfileMenu';
 
-import AuthProvider from './src/auth/AuthContext'
+import AuthProvider from './src/contexts/auth/AuthContext'
 
 /*
 <AuthProvider>

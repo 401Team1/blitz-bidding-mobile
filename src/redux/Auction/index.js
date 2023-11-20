@@ -2,9 +2,10 @@ import { createSlice } from '@reduxjs/toolkit';
 import mockMessageData from '../data/json/mockMsgData.json';
 import mockItemData from '../data/json/mockItemData.json';
 
+let mockItems = [...mockItemData];
+
 function formatDateNow() {
   const now = new Date(Date.now());
-
   const year = now.getFullYear();
   const month = (now.getMonth() + 1).toString().padStart(2, '0');
   const day = now.getDate().toString().padStart(2, '0');
@@ -30,13 +31,13 @@ const auctionSlice = createSlice({
       maxBidder: '',
       currentItem: null,
       nextItem: null,
-      messages: mockMessageData,
+      messages: [],
     },
     reducers: {
       startAuction: (state, action) => {
         state.auctionStarted = Date.now();
-        state.currentItem = mockItemData.shift();
-        state.nextItem = mockItemData[0] || null;
+        state.currentItem = mockItems.shift();
+        state.nextItem = mockItems[0] || null;
         state.messages.push({ timestamp: formatDateNow(), user: 'System', message: 'Auction has started.' });
         console.log( 'Auction started:', state.currentItem ); //state.currentItem
       },

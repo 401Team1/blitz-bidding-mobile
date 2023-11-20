@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { SafeAreaView, Text, StyleSheet } from 'react-native';
 import ChatWindow from './ChatWindow';
+import SendBid from './Auction/SendBid'
 import { useDispatch } from 'react-redux';
 import { endAuction } from '../redux/Auction/index';
 
@@ -32,6 +33,7 @@ const AuctionRoom = () => {
         <SafeAreaView style={styles.container}>
             <Text style={styles.timer}>Time left: {formatTime(timer)}</Text>
             <ChatWindow />
+            <SendBid dispatch={dispatch} style={ styles.input } />
         </SafeAreaView>
     );
 };
@@ -45,6 +47,13 @@ const styles = StyleSheet.create({
         fontSize: 18,
         marginVertical: 10,
         alignSelf: 'center',
+    },
+    input: {
+        borderWidth: 1,
+        borderColor: 'gray',
+        padding: 10,
+        borderRadius: 20,
+        marginBottom: 10,
     },
 });
 

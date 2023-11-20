@@ -28,7 +28,7 @@ const auctionSlice = createSlice({
       auctionStarted: '', //does this need to always be a Javascript "Date" object, or should it be a string?
         maxBid: 0,
         maxBidder: '',
-        currentItem: null,
+        currentItem: mockItemData[0],
         nextItem: null,
         messages: mockMessageData,
     },
@@ -50,8 +50,8 @@ const auctionSlice = createSlice({
       },
       sendBid: (state, action) => {
         const { bid, username } = action.payload;
-
-        if ( bid < state.currentItem.reserve || bid < state.maxBid ) {
+        //bid < state.currentItem.reserve || 
+        if ( bid <= state.maxBid ) {
           state.messages.push({ timestamp: formatDateNow(), user: 'System', message: 'Bid was not high enough.' });
           console.log('Bid was not high enough.');
         } else {

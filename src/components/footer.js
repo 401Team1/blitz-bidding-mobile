@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View } from 'native-base'
+import { View, Text } from '@gluestack-ui/themed'
 import { StyleSheet } from "react-native";
 
 export default function Footer() {

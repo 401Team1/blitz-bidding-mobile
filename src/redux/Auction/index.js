@@ -30,7 +30,7 @@ const auctionSlice = createSlice({
       maxBidder: '',
       currentItem: null,
       nextItem: null,
-      messages: mockMessageData,
+      messages: [],
     },
     reducers: {
       startAuction: (state, action) => {

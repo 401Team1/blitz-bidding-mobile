@@ -6,7 +6,7 @@ import { SafeAreaView,
          Image, 
          Dimensions,
          StyleSheet } from 'react-native';
-import Carousel from 'react-native-snap-carousel';
+//import Carousel from 'react-native-snap-carousel';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { setItems } from '../redux/Item'
@@ -39,14 +39,18 @@ const UserHomeScreen = ({ navigation }) => {
         );
     };
 
+    /*
+    <Carousel
+    data={ items }
+    renderItem={renderItem}
+    sliderWidth={50}
+    itemWidth={50}
+/>
+*/
+
     return (
         <SafeAreaView>
-            <Carousel
-                data={ items }
-                renderItem={renderItem}
-                sliderWidth={50}
-                itemWidth={50}
-            />
+
             <Button title="Join Auction" onPress={() => navigation.navigate('AuctionRoomUser')} />
             <Button title="Submit Item" onPress={() => navigation.navigate('SubmitItem')} />
         </SafeAreaView>

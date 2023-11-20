@@ -1,7 +1,6 @@
 //https://gluestack.io/ui/docs/components/media-and-icons/icon
 
 import React from "react";
-//import { HStack, IconButton, Icon, Text, Box, StatusBar } from 'native-base';
 import { Box, HStack, Icon, Text, StatusBar } from "@gluestack-ui/themed"
 
 import { MaterialIcons } from '@expo/vector-icons';

@@ -22,12 +22,6 @@ import HeaderProfileMenu from './src/components/HeaderProfileMenu';
 
 import AuthProvider from './src/contexts/auth/AuthContext'
 
-/*
-<AuthProvider>
-
-</AuthProvider>
-*/
-
 import Profile from './src/screens/Profile';
 
 
@@ -49,6 +43,7 @@ const AppContent = () => {
 
 const App = () => {
     return (
+        <AuthProvider>
         <Provider store={store}>
             <GluestackUIProvider config={config}>
                 <ScreenProvider>
@@ -71,6 +66,7 @@ const App = () => {
                 </ScreenProvider>
             </GluestackUIProvider>
         </Provider>
+        </AuthProvider>
     );
 };
 

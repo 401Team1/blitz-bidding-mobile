@@ -4,14 +4,17 @@ import mockItemData from '../data/json/mockItemData.json';
 const itemSlice = createSlice({
     name: 'item',
     initialState: {
-      items: [],
+      items: [{ 'test': 'testing'}],
       currentAuctionItem: null,
     },
     reducers: {
-      setItems: (state, action) => {
+      setItems: ( state, action ) => {
         state.items = mockItemData;
-        console.log( 'Items Loaded.' );
+        //console.log( 'Items Loaded.' );
       },
+      setCurrentAuctionItem: ( state, action ) => {
+        state.currentAuctionItem = action.payload;
+      }
     }
   });
 
@@ -23,6 +26,6 @@ const itemSlice = createSlice({
   }
   */
 
-  export const { setItems } = itemSlice.actions;
+  export const { setItems, setCurrentAuctionItem } = itemSlice.actions;
   
   export default itemSlice.reducer;

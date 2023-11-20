@@ -1,9 +1,10 @@
 import React from "react";
-import { Text, View, StyleSheet } from 'react-native'
+import { Text, View } from 'native-base'
+import { StyleSheet } from "react-native";
 
 export default function Footer() {
     return (
-        <View style={styles.footer}>
+        <View style={styles.container}>
             <Text style={styles.footerText}>
                 Blitz Bidding
             </Text>
@@ -12,14 +13,13 @@ export default function Footer() {
 }
 
 const styles = StyleSheet.create({
-    footer: {
-        w: "100%",
-        bg: "violet.600",
-        px: 1,
-        py: 1.5,
+    container: {
+        width: '100%',
+        height: '7%',
+        backgroundColor: "#D0BCD2",
+        paddingTop: 15,
     },
     footerText: {
-        color: "white",
         fontSize: 20,
         fontWeight: "bold",
     }

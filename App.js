@@ -26,7 +26,13 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HeaderMenu from './src/components/HeaderMenu';
 import HeaderProfileMenu from './src/components/HeaderProfileMenu';
 
+import AuthProvider from './src/auth/AuthContext'
 
+/*
+<AuthProvider>
+
+</AuthProvider>
+*/
 
 const Stack = createNativeStackNavigator();
 

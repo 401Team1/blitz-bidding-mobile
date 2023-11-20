@@ -17,7 +17,7 @@ export default function Header() {
                 <HStack alignItems="center">
                     <Icon size="sm" as={MaterialIcons} name="menu" color="white" />
                     <Text style={styles.headerText}>
-                        Blitz Bidding
+                        Blitz Bidding (TEST)
                     </Text>
                 </HStack>
                 <HStack>

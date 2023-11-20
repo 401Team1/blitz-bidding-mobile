@@ -25,16 +25,16 @@ function formatDateNow() {
 const auctionSlice = createSlice({
     name: 'auction',
     initialState: {
-      auctionStarted: '', //does this need to always be a Javascript "Date" object, or should it be a string?
-        maxBid: 0,
-        maxBidder: '',
-        currentItem: mockItemData[0],
-        nextItem: null,
-        messages: mockMessageData,
+      auctionStarted: null, // will be set to value of Date.now() when admin starts auction
+      maxBid: 0,
+      maxBidder: '',
+      currentItem: null,
+      nextItem: null,
+      messages: mockMessageData,
     },
     reducers: {
       startAuction: (state, action) => {
-        state.auctionStarted = formatDateNow();
+        state.auctionStarted = Date.now();
         state.currentItem = mockItemData.shift();
         state.nextItem = mockItemData[0] || null;
         state.messages.push({ timestamp: formatDateNow(), user: 'System', message: 'Auction has started.' });
@@ -60,7 +60,7 @@ const auctionSlice = createSlice({
           state.messages.push({ timestamp: formatDateNow(), user: 'System', message: 'Bid recieved.' });
         }
 
-        console.log('Bid Recieved:', bid);
+        console.log(`Bid Recieved: ${bid} by ${state.maxBidder}`);
       },
       sendMessage: (state, action) => {
         state.messages.push({ timestamp: formatDateNow(), user: action.payload.username, message: action.payload.message });

@@ -17,7 +17,7 @@ const AuctionRoomUser = () => {
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <TouchableOpacity onPress={() => setModalVisible(true)}>
-                <Text>{currentItem?.name}</Text>
+                <Text>{currentItem ? currentItem.name : null}</Text>
             </TouchableOpacity>
             <Text>Current highest bid: ${maxBid}</Text>
             <AuctionRoom />

@@ -4,8 +4,7 @@ import { connect } from 'react-redux';
 import { sendBid } from '../../../redux/Auction';
 
 export default SendBid = ({ dispatch, style }) => {
-    const [bid, setBid] = useState(0);
-    
+    const [bid, setBid] = useState();
 
     const handleBid = () => {
         dispatch(sendBid({ username: 'CurrentUsername', bid }));

@@ -12,11 +12,11 @@ const ItemDetailModal = ({ currentItem, visible, onClose }) => {
             <SafeAreaView style={styles.modalOverlay}>
                 <SafeAreaView style={styles.modalContent}>
                     <Image
-                        source={currentItem.picture ? { uri: currentItem.picture } : require('../../assets/images/placeholder-image.png')}
+                        source={currentItem ? { uri: currentItem.picture } : require('../../assets/images/placeholder-image.png')}
                         syle={styles.image}
                     />
-                    <Text style={styles.currentItemName}>{currentItem.name}</Text>
-                    <Text>{currentItem.description}</Text>
+                    <Text style={styles.currentItemName}>{currentItem?.name}</Text>
+                    <Text>{currentItem?.description}</Text>
                     <TouchableOpacity onPress={onClose} style={styles.closeButton}>
                         <Text>Close</Text>
                     </TouchableOpacity>

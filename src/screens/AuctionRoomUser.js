@@ -12,13 +12,12 @@ const AuctionRoomUser = () => {
     const dispatch = useDispatch();
     const [modalVisible, setModalVisible] = useState(false);
 
-    
-
+    //<Header />
+    //<Footer />
     return (
         <SafeAreaView style={{ flex: 1 }}>
-            <Header />
             <TouchableOpacity onPress={() => setModalVisible(true)}>
-                <Text>{currentItem.name}</Text>
+                <Text>{currentItem ? currentItem.name : null}</Text>
             </TouchableOpacity>
             <Text>Current highest bid: ${maxBid}</Text>
             <AuctionRoom />
@@ -27,7 +26,6 @@ const AuctionRoomUser = () => {
                 visible={modalVisible}
                 onClose={() => setModalVisible(false)}
             />
-            <Footer />
         </SafeAreaView>
     );
 };

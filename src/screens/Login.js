@@ -1,16 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { SafeAreaView, Text, TextInput, Button, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useScreen } from '../contexts/ScreenContext';
+import { AuthContext } from '../contexts/auth/AuthContext';
 
-const LoginScreen = () => {
+const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const navigation = useNavigation();
+    const { setRole, navigate } = useScreen();
+    const { login } = useContext(AuthContext); //auth.user.username
 
     const handleLogin = () => {
-        // Implement login logic
-        // On successful login, navigate to UserHome
-        navigation.navigate('UserHome');
+        login( username, password );
+
+        if (username === "admin" && password === "admin") {
+            navigate('AdminHome');
+        } else {           
+            navigate('UserHome');
+        }
     };
 
     return (
@@ -34,4 +40,4 @@ const LoginScreen = () => {
     );
 };
 
-export default LoginScreen;
+export default Login;

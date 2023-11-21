@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { SafeAreaView, Text, TouchableOpacity } from 'react-native';
 import AuctionRoom from '../components/AuctionRoom';
-import Header from '../components/header';
-import Footer from '../components/footer';
 import ItemDetailModal from '../components/ItemDetailsModal';
 import { useSelector, useDispatch } from 'react-redux';
 

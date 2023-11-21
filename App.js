@@ -1,22 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Provider } from 'react-redux';
-import store from './src/redux';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-
-//import { NativeBaseProvider, Box } from 'native-base';
-
-import { GluestackUIProvider, Text, Box } from "@gluestack-ui/themed"
-import { config } from "@gluestack-ui/config" // Optional if you want to use default theme
-
-import { TouchableOpacity, SafeAreaView } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
-import Header from './src/components/header';
+import store from './src/redux';
+import { GluestackUIProvider, Box } from "@gluestack-ui/themed";
+import { config } from "@gluestack-ui/config";
+import { ScreenProvider, useScreen } from './src/contexts/ScreenContext';
+import BlitzHeader from './src/components/BlitzHeader';
+import Footer from './src/components/Footer';
 import Login from './src/screens/Login';
 import Signup from './src/screens/Signup';
 import UserHome from './src/screens/UserHome';
-import Footer from './src/components/footer';
 import AuctionRoomUser from './src/screens/AuctionRoomUser';
 
 import store from './src/redux';
@@ -34,51 +28,50 @@ import AuthProvider from './src/auth/AuthContext'
 </AuthProvider>
 */
 
+import Profile from './src/screens/Profile';
+
+
 const Stack = createNativeStackNavigator();
 
+const isAuth = true;
+
+const AppContent = () => {
+    const { currentScreen } = useScreen();
+    const screenComponents = {
+        Login: <Login />,
+        Signup: <Signup />,
+        UserHome: <UserHome />,
+        AuctionRoomUser: <AuctionRoomUser />,
+        // Add other screens here 
+    };
+    return screenComponents[currentScreen] || <Text>Screen not found</Text>;
+};
+
 const App = () => {
-
-    const isAuth = true;
-
     return (
         <Provider store={store}>
             <GluestackUIProvider config={config}>
-                <Box flex={1}>
-                    <Header />
+                <ScreenProvider>
                     <NavigationContainer>
-                        <Stack.Navigator
-                        screenOptions={{
-                            headerTitle: 'Blitz Bidding',
-                            headerStyle: {
-                                backgroundColor: '#D0BCD2',
-                            },
-                            headerTintColor: '',
-                            headerLeft: HeaderMenu,
-                            headerRight: HeaderProfileMenu,
-                        }}
-                    >
-                        {isAuth ? (
-                            <>
-                                <Stack.Screen name="UserHome" component={UserHome} />
-                                {/* <Stack.Screen name="AdminHome" component={AdminHome} /> */}
-                                <Stack.Screen name="AuctionRoomUser" component={AuctionRoomUser} />
-                                {/* <Stack.Screen name="MyAuction" component={MyAuction} /> */}
-                                {/* <Stack.Screen name="Profile" component={Profile} /> */}
-                                {/* <Stack.Screen name="SubmitItem" component={SubmitItem} /> */}
-                            </>
-                        ) : (
-                            <>
-                                <Stack.Screen name="Login" component={Login} />
-                                <Stack.Screen name="Signup" component={Signup} />
-                            </>
-                        )}
-
-                    </Stack.Navigator>
+                        <Stack.Navigator headerMode="none">
+                            <Stack.Screen name="AppContent" component={AppContent} />
+                            <Stack.Screen name="UserHome" component={UserHome} />
+                            <Stack.Screen name="AuctionRoomUser" component={AuctionRoomUser} />
+                            <Stack.Screen name="Login" component={Login} />
+                            {/* <Stack.Screen name="MyAuction" component={MyAuction} /> */}
+                            <Stack.Screen name="Profile" component={Profile} />
+                            <Stack.Screen name="Signup" component={Signup} />
+                            {/* <Stack.Screen name="SubmitItem" component={SubmitItem} /> */}
+                        </Stack.Navigator>
+                        <Box flex={1}>
+                            <BlitzHeader />
+                            <Footer />
+                        </Box>
                     </NavigationContainer>
-                    <Footer />
-                </Box>
+                </ScreenProvider>
             </GluestackUIProvider>
         </Provider>
     );
 };
+
 export default App;

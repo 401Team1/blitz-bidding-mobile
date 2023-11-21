@@ -4,9 +4,9 @@ import ChatWindow from './ChatWindow';
 import SendBid from './Auction/SendBid'
 import { useSelector, useDispatch } from 'react-redux';
 
-import { startAuction, endAuction } from '../redux/Auction/index';
-import StartAuction from './Auction/StartAuction';
-import EndAuction from './Auction/EndAuction';
+import { startAuction, endAuction } from '../redux/auction/index';
+import StartAuction from './Auction/StartAuction/index';
+import EndAuction from './Auction/EndAuction/index';
 
 const AuctionRoom = () => {
     const [timer, setTimer] = useState(0);

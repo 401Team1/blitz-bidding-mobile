@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, ScrollView, View, Text, TextInput, Button } from 'react-native';
 import { connect } from 'react-redux';
-import { sendBid } from '../../../redux/Auction';
+import { sendBid } from '../../../redux/auction/index';
 
 export default SendBid = ({ dispatch, style }) => {
     const [bid, setBid] = useState();

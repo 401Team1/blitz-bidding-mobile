@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { AuthContext } from '../../src/auth/AuthProvider';
+import { AuthContext } from '../../contexts/auth/AuthContext';
 
 export default function TestDiv() {
 

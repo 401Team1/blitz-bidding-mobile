@@ -10,6 +10,7 @@ import BlitzHeader from './src/components/BlitzHeader';
 import Footer from './src/components/footer';
 import Login from './src/screens/Login';
 import Signup from './src/screens/Signup';
+import AdminHome from './src/screens/AdminHome';
 import UserHome from './src/screens/UserHome';
 import AuctionRoomUser from './src/screens/AuctionRoomUser';
 
@@ -46,6 +47,7 @@ const App = () => {
                     <NavigationContainer>
                         <Stack.Navigator headerMode="none">
                             <Stack.Screen name="AppContent" component={AppContent} />
+                            <Stack.Screen name="AdminHome" component={AdminHome} />
                             <Stack.Screen name="UserHome" component={UserHome} />
                             <Stack.Screen name="AuctionRoomUser" component={AuctionRoomUser} />
                             <Stack.Screen name="Login" component={Login} />

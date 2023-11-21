@@ -7,6 +7,7 @@ import { SafeAreaView,
          Dimensions,
          StyleSheet } from 'react-native';
 //import Carousel from 'react-native-snap-carousel';
+import { useScreen } from '../contexts/ScreenContext';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { setItems } from '../redux/Item'
@@ -15,9 +16,10 @@ import { setItems } from '../redux/Item'
 export const SLIDER_WIDTH = Dimensions.get('window').width + 80
 export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7)
 
-const UserHomeScreen = ({ navigation }) => {
-    const { items, currentAuctionItem } = useSelector(state => state.item);
-    const dispatch = useDispatch(); // just leaving it here for now.
+const UserHomeScreen = () => {
+  const { items, currentAuctionItem } = useSelector(state => state.item);
+  const dispatch = useDispatch(); // just leaving it here for now.
+  const { navigate } = useScreen();
 
     useEffect(() => {
         dispatch(setItems());
@@ -51,8 +53,8 @@ const UserHomeScreen = ({ navigation }) => {
     return (
         <SafeAreaView>
 
-            <Button title="Join Auction" onPress={() => navigation.navigate('AuctionRoomUser')} />
-            <Button title="Submit Item" onPress={() => navigation.navigate('SubmitItem')} />
+            <Button title="Join Auction" onPress={() => navigate('AuctionRoomUser')} />
+            <Button title="Submit Item" onPress={() => navigate('SubmitItem')} />
         </SafeAreaView>
     );
 };

@@ -14,6 +14,16 @@ const itemSlice = createSlice({
       },
       setCurrentAuctionItem: ( state, action ) => {
         state.currentAuctionItem = action.payload;
+      },
+      approveItem: ( start, action ) => {
+        let currentItems = [ ...state.items ];
+        const updatedItems = currentItems.map(( item ) => {
+          if ( item.id === action.payload.id ) {
+            item.status = 'approved'
+          }
+          return item;
+        })
+        state.items = updatedItems;
       }
     }
   });
@@ -26,6 +36,6 @@ const itemSlice = createSlice({
   }
   */
 
-  export const { setItems, setCurrentAuctionItem } = itemSlice.actions;
+  export const { setItems, setCurrentAuctionItem, approveItem } = itemSlice.actions;
   
   export default itemSlice.reducer;

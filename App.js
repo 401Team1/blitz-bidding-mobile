@@ -12,7 +12,24 @@ import Login from './src/screens/Login';
 import Signup from './src/screens/Signup';
 import UserHome from './src/screens/UserHome';
 import AuctionRoomUser from './src/screens/AuctionRoomUser';
+
+import store from './src/redux';
+import { NativeBaseProvider, Box } from 'native-base';
+import { Text, TouchableOpacity, SafeAreaView } from 'react-native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HeaderMenu from './src/components/HeaderMenu';
+import HeaderProfileMenu from './src/components/HeaderProfileMenu';
+
+import AuthProvider from './src/auth/AuthContext'
+
+/*
+<AuthProvider>
+
+</AuthProvider>
+*/
+
 import Profile from './src/screens/Profile';
+
 
 const Stack = createNativeStackNavigator();
 

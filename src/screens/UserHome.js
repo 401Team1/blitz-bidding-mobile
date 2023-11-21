@@ -9,20 +9,21 @@ import { SafeAreaView,
 //import Carousel from 'react-native-snap-carousel';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { setItems } from '../redux/Item'
 
 // Carousel card image variables
 export const SLIDER_WIDTH = Dimensions.get('window').width + 80
 export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7)
 
 const UserHomeScreen = ({ navigation }) => {
-    const { items, currentAuctionItem } = useSelector(state => state.item);
-    const dispatch = useDispatch(); // just leaving it here for now.
+    //const { items, currentAuctionItem } = useSelector(state => state.item);
+    //const dispatch = useDispatch(); // just leaving it here for now.
 
+    /*
     useEffect(() => {
         dispatch(setItems());
         console.log(items)
     }, [])
+    */
 
     //{item.picture}
     const renderItem = ({ item }) => {

@@ -6,8 +6,9 @@ import store from './src/redux';
 import { GluestackUIProvider, Box } from "@gluestack-ui/themed";
 import { config } from "@gluestack-ui/config";
 import { ScreenProvider, useScreen } from './src/contexts/ScreenContext';
+
 import BlitzHeader from './src/components/BlitzHeader';
-import Footer from './src/components/Footer';
+import Footer from './src/components/footer.js';
 import Login from './src/screens/Login';
 import Signup from './src/screens/Signup';
 import UserHome from './src/screens/UserHome';

@@ -12,7 +12,7 @@ export default function HeaderProfileMenu() {
       trigger={({ ...triggerProps }) => {
         return (
           <Pressable accessibilityLabel="User Profile Options" {...triggerProps}>
-            <Icon as={Ionicons} name="person" color='#FFF' size="lg" />
+            <Icon as={Ionicons} name="person" color='#FFFFFF' size="xl" />
           </Pressable>
         )
       }}

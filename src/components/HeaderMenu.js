@@ -5,90 +5,92 @@ import { useSelector } from "react-redux";
 import { Ionicons } from "@expo/vector-icons";
 import { AuthContext } from "../contexts/auth/AuthContext";
 
-function UserMenu() {
+function UserMenu(props) {
+
+  const { handlePress, userRole } = props;
+
   return(
     <Menu
       trigger={(triggerProps) => {
         return(
           <Pressable accessibilityLabel="More options menu" {...triggerProps}>
-            <Icon as={MenuIcon} color="#FFF" size="lg" />
+            <Icon as={MenuIcon} color="#FFF" size="xl" />
           </Pressable>
         )
       }}
     >
-      <MenuItem 
-      key="UserHome"
-      textValue="UserHome"
-      onPress={() => handlePress("UserHome")}
-      >
-        <MenuItemLabel size="sm">Home</MenuItemLabel>
-      </MenuItem>
+      // User
+      { userRole === 'user' ? 
+        <MenuItem 
+        key="UserHome"
+        textValue="UserHome"
+        onPress={() => handlePress("UserHome")}
+        >
+          <MenuItemLabel size="sm">Home</MenuItemLabel>
+        </MenuItem>
+        : null
+      }
 
+      // Putting console.log placeholders for now. will replace if we can build the actual screens.
+      { userRole === 'user' ? 
       <MenuItem 
-      key="AuctionRoomUser"
-      textValue="AuctionRoomUser"
-      onPress={() => handlePress("AuctionRoomUser")}
+      key="MyAuctions"
+      textValue="MyAuctions"
+      onPress={() => console.log("MyAuctions")}
       >
         <MenuItemLabel size="sm">My Auctions</MenuItemLabel>
       </MenuItem>
+      : null
+    }
 
+    { userRole === 'user' ?
       <MenuItem 
       key="SubmitItem"
       textValue="SubmitItem"
-      onPress={() => handlePress("SubmitItem")}
+      onPress={() => console.log("SubmitItem")}
       >
         <MenuItemLabel size="sm">Submit an Item</MenuItemLabel>
       </MenuItem>
-    </Menu>
-  )
-}
-
-function AdminMenu() {
-  return (
-    <Menu
-      trigger={(triggerProps) => {
-        return(
-          <Pressable accessibilityLabel="More options menu" {...triggerProps}>
-            <Icon as={MenuIcon} color="#FFF" size="md" />
-          </Pressable>
-        )
-      }}
-    >
+      : null
+    }
+    // Admin
+    { userRole === 'admin' ?
       <MenuItem 
       key="AdminHome"
       textValue="AdminHome"
       onPress={() => handlePress("AdminHome")}
       >
-        <MenuItemLabel size="sm">Home</MenuItemLabel>
+      <MenuItemLabel size="sm">Home</MenuItemLabel>
       </MenuItem>
-
+      : null
+    }
+    { userRole === 'admin' ?
       <MenuItem 
       key="Reviews"
       textValue="Reviews"
       onPress={() => handlePress("Reviews")}
       >
-        <MenuItemLabel size="sm">My Auctions</MenuItemLabel>
+        <MenuItemLabel size="sm">Review Auctions</MenuItemLabel>
       </MenuItem>
+      : null
+    }
     </Menu>
   )
 }
 
 export default function HeaderMenu() {
   const navigation = useNavigation();
-  const { user, isLoggedIn } = useContext(AuthContext); // Replace with your actual context
+  //const { user, isLoggedIn } = useContext(AuthContext); // Replace with your actual context
+  const user = { username: 'josh', 'role':'admin'};
+  const isLoggedIn = true;
 
   const handlePress = (screenName) => {
     navigation.navigate(screenName);
   };
 
   const renderMenu = (user) => {
-    if (isLoggedIn && user && user.role === "user") {
-      return <UserMenu handlePress={handlePress} />;
-    } else if (isLoggedIn && user && user.role === "admin") {
-      return <AdminMenu handlePress={handlePress} />;
-    } else {
-      // Handle other cases if needed
-      return null;
+    if (isLoggedIn && user) {
+      return <UserMenu handlePress={handlePress} userRole={user.role} />;
     }
   };
 

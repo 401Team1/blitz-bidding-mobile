@@ -39,10 +39,10 @@ export default function BlitzHeader() {
 
 const styles = StyleSheet.create({
     headerText: {
-        color: '#FFF',
-        fontSize: 25,
+        color: 'white',
+        fontSize: 26,
         fontWeight: 'bold',
         alignItems: 'center',
-        marginBottom: 10,
+        marginBottom: 5,
     }
 })

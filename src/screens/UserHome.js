@@ -1,30 +1,31 @@
 import React, { useEffect } from 'react';
-import { SafeAreaView, 
-         View, 
-         Text, 
-         Button, 
-         Image, 
-         Dimensions,
-         StyleSheet } from 'react-native';
+import { SafeAreaView, View, Text, Button, Image, Dimensions, StyleSheet } from 'react-native';
 //import Carousel from 'react-native-snap-carousel';
-import { useScreen } from '../contexts/ScreenContext';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { setItems } from '../redux/Item'
+// import { setItems } from '../redux/item/index';
 
 // Carousel card image variables
 export const SLIDER_WIDTH = Dimensions.get('window').width + 80
 export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7)
 
-const UserHomeScreen = () => {
-  const { items, currentAuctionItem } = useSelector(state => state.item);
-  const dispatch = useDispatch(); // just leaving it here for now.
-  const { navigate } = useScreen();
+const UserHome = ({ onNavigate }) => {
+    // const { items, currentAuctionItem } = useSelector(state => state.item);
+    // const dispatch = useDispatch(); // just leaving it here for now.
+
+    // useEffect(() => {
+    //     dispatch(setItems());
+    //     console.log(items)
+    // }, [])
+    const state = useSelector(state => state); // Log the entire state for debugging
+    console.log("Redux State:", state); // Check the structure of your Redux state
+
+    const { items, currentAuctionItem } = useSelector(state => state.item); // Ensure 'item' is the correct property name in your Redux state
+    const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(setItems());
-        //console.log(items)
-    }, [])
+    }, []);
 
     //{item.picture}
     const renderItem = ({ item }) => {
@@ -53,8 +54,8 @@ const UserHomeScreen = () => {
     return (
         <SafeAreaView>
 
-            <Button title="Join Auction" onPress={() => navigate('AuctionRoomUser')} />
-            <Button title="Submit Item" onPress={() => navigate('SubmitItem')} />
+            <Button title="Join Auction" onPress={() => onNavigate('AuctionRoomUser')} />
+            <Button title="Submit Item" onPress={() => onNavigate('SubmitItem')} />
         </SafeAreaView>
     );
 };
@@ -94,4 +95,4 @@ const styles = StyleSheet.create({
     }
   })
 
-export default UserHomeScreen;
+export default UserHome;

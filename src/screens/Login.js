@@ -3,14 +3,17 @@ import { SafeAreaView, Text, TextInput, Button, TouchableOpacity } from 'react-n
 import { useScreen } from '../contexts/ScreenContext';
 import { AuthContext } from '../contexts/auth/AuthContext';
 
-const Login = () => {
+const Login = ({ onNavigate }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const { setRole, navigate } = useScreen();
     const { login } = useContext(AuthContext); //auth.user.username
 
     const handleLogin = () => {
-        login( username, password );
+        // Implement login logic
+        // On successful login, navigate to UserHome
+        onNavigate('UserHome');
+    };
 
         if (username === "admin" && password === "admin") {
             navigate('AdminHome');

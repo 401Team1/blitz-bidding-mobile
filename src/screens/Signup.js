@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { SafeAreaView, TextInput, Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-const SignupScreen = () => {
+const Signup = ({ onNavigate }) => {
     const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -11,7 +11,7 @@ const SignupScreen = () => {
     const handleSignup = () => {
         // Implement signup logic
         // On successful signup, navigate to UserHome
-        navigation.navigate('UserHome');
+        onNavigate('UserHome');
     };
 
     return (
@@ -37,4 +37,4 @@ const SignupScreen = () => {
     );
 };
 
-export default SignupScreen;
+export default Signup;

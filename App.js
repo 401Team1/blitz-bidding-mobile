@@ -6,7 +6,7 @@ import store from './src/redux';
 import { GluestackUIProvider, Box } from "@gluestack-ui/themed";
 import { config } from "@gluestack-ui/config";
 import { ScreenProvider, useScreen } from './src/contexts/ScreenContext';
-
+import AuthProvider from './src/contexts/auth/AuthContext.js';
 import BlitzHeader from './src/components/BlitzHeader';
 import Footer from './src/components/footer.js';
 import Login from './src/screens/Login';
@@ -33,31 +33,33 @@ const Stack = createNativeStackNavigator();
 
 const App = () => {
     return (
-        <Provider store={store}>
-            <GluestackUIProvider config={config}>
-                <ScreenProvider>
-                    <Box flex={1}>
-                        <NavigationContainer>
-                            <BlitzHeader />
-                            <Stack.Navigator 
-                                screenOptions={{headerShown: false}}
-                            >
-                                {/* <Stack.Screen name="AppContent" component={AppContent} /> */}
-                                <Stack.Screen name="UserHome" component={UserHome} />
-                                <Stack.Screen name="AuctionRoomUser" component={AuctionRoomUser} />
-                                <Stack.Screen name="Login" component={Login} />
-                                {/* <Stack.Screen name="MyAuction" component={MyAuction} /> */}
-                                <Stack.Screen name="Profile" component={Profile} />
-                                <Stack.Screen name="Signup" component={Signup} />
-                                {/* <Stack.Screen name="SubmitItem" component={SubmitItem} /> */}
-                            </Stack.Navigator>
-                            {/* <AppContent /> */}
-                            <Footer />
-                        </NavigationContainer>
-                    </Box>
-                </ScreenProvider>
-            </GluestackUIProvider>
-        </Provider>
+        <AuthProvider>
+            <Provider store={store}>
+                <GluestackUIProvider config={config}>
+                    <ScreenProvider>
+                        <Box flex={1}>
+                            <NavigationContainer>
+                                <BlitzHeader />
+                                <Stack.Navigator 
+                                    screenOptions={{headerShown: false}}
+                                >
+                                    {/* <Stack.Screen name="AppContent" component={AppContent} /> */}
+                                    <Stack.Screen name="UserHome" component={UserHome} />
+                                    <Stack.Screen name="AuctionRoomUser" component={AuctionRoomUser} />
+                                    <Stack.Screen name="Login" component={Login} />
+                                    {/* <Stack.Screen name="MyAuction" component={MyAuction} /> */}
+                                    <Stack.Screen name="Profile" component={Profile} />
+                                    <Stack.Screen name="Signup" component={Signup} />
+                                    {/* <Stack.Screen name="SubmitItem" component={SubmitItem} /> */}
+                                </Stack.Navigator>
+                                {/* <AppContent /> */}
+                                <Footer />
+                            </NavigationContainer>
+                        </Box>
+                    </ScreenProvider>
+                </GluestackUIProvider>
+            </Provider>
+        </AuthProvider>
     );
 };
 

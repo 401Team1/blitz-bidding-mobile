@@ -3,6 +3,7 @@ import { useNavigation } from "@react-navigation/native";
 import { Icon, MenuIcon, Menu, MenuItem, MenuItemLabel, Pressable } from '@gluestack-ui/themed'
 import { useSelector } from "react-redux";
 import { Ionicons } from "@expo/vector-icons";
+
 import { AuthContext } from "../contexts/auth/AuthContext";
 
 function UserMenu(props) {
@@ -80,9 +81,7 @@ function UserMenu(props) {
 
 export default function HeaderMenu() {
   const navigation = useNavigation();
-  //const { user, isLoggedIn } = useContext(AuthContext); // Replace with your actual context
-  const user = { username: 'josh', 'role':'admin'};
-  const isLoggedIn = true;
+  const { user, isLoggedIn } = useContext(AuthContext); // Replace with your actual context
 
   const handlePress = (screenName) => {
     navigation.navigate(screenName);

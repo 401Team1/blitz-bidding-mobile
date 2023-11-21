@@ -7,18 +7,14 @@ import { GluestackUIProvider, Box } from "@gluestack-ui/themed";
 import { config } from "@gluestack-ui/config";
 import { ScreenProvider, useScreen } from './src/contexts/ScreenContext';
 import BlitzHeader from './src/components/BlitzHeader';
-import Footer from './src/components/Footer';
+import Footer from './src/components/footer';
 import Login from './src/screens/Login';
 import Signup from './src/screens/Signup';
 import UserHome from './src/screens/UserHome';
 import AuctionRoomUser from './src/screens/AuctionRoomUser';
 
-import store from './src/redux';
-import { NativeBaseProvider, Box } from 'native-base';
 import { Text, TouchableOpacity, SafeAreaView } from 'react-native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HeaderMenu from './src/components/HeaderMenu';
-import HeaderProfileMenu from './src/components/HeaderProfileMenu';
+
 
 import AuthProvider from './src/contexts/auth/AuthContext'
 

@@ -1,9 +1,7 @@
-Login.js
-
 import React, { useState, useContext } from 'react';
 import { SafeAreaView, Text, TextInput, Button, TouchableOpacity } from 'react-native';
 import { useScreen } from '../contexts/ScreenContext';
-import { AuthContext } from '../contexts/auth/AuthProvider';
+import { AuthContext } from '../contexts/auth/AuthContext';
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -15,10 +13,8 @@ const Login = () => {
         login( username, password );
 
         if (username === "admin" && password === "admin") {
-            setRole('admin');
             navigate('AdminHome');
         } else {           
-            setRole('user');
             navigate('UserHome');
         }
     };

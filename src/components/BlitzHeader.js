@@ -1,11 +1,12 @@
 //https://gluestack.io/ui/docs/components/media-and-icons/icon
 
 import React from 'react';
-import { TouchableOpacity, Text } from 'react-native';
+import { TouchableOpacity, Text, StyleSheet, SafeAreaView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { HStack } from '@gluestack-ui/themed';
+import { HStack, StatusBar } from '@gluestack-ui/themed';
 import HeaderMenu from './HeaderMenu';
 import HeaderProfileMenu from './HeaderProfileMenu';
+
 
 export default function BlitzHeader() {
     const navigation = useNavigation();
@@ -15,52 +16,33 @@ export default function BlitzHeader() {
     };
 
     return (
-        <HStack
-            justifyContent="space-between"
-            alignItems="center"
-            p="$2"
-            backgroundColor="#D0BCD2"
-        >
-            <HeaderMenu />
-            
-            <TouchableOpacity onPress={handleUserHomePress}>
-                <Text style={{ color: '#FFF' }}>Go to User Home</Text>
-            </TouchableOpacity>
-
-            <HeaderProfileMenu />
-        </HStack>
+        <>
+            <StatusBar backgroundColor='#7e5287' />
+            <SafeAreaView backgroundColor='#7e5287'>
+                <HStack
+                    justifyContent="space-between"
+                    alignItems="center"
+                    backgroundColor="#8d6096"
+                    px={10}
+                    py={5}
+                >
+                    <HeaderMenu />
+                    <TouchableOpacity onPress={handleUserHomePress}>
+                        <Text style={styles.headerText}>Blitz Bidding </Text>   
+                    </TouchableOpacity>
+                    <HeaderProfileMenu />
+                </HStack>
+            </SafeAreaView>
+        </>
     );
 };
 
-
-
-// {/* <NavigationContainer>
-//                 <Stack.Navigator
-//                     screenOptions={{
-//                         headerLargeTitle: 'Blitz Bidding',
-//                         headerStyle: {
-//                             backgroundColor: '#D0BCD2',
-//                         },
-//                         headerTintColor: '#FFF',
-//                         headerLeft: HeaderMenu,
-//                         headerRight: HeaderProfileMenu,
-//                     }}
-//                 >
-//                     {isAuth ? (
-//                         <>
-//                             <Stack.Screen name="UserHome" component={UserHome} />
-//                             {/* <Stack.Screen name="AdminHome" component={AdminHome} /> */}
-//                             <Stack.Screen name="AuctionRoomUser" component={AuctionRoomUser} />
-//                             {/* <Stack.Screen name="MyAuction" component={MyAuction} /> */}
-//                             {/* <Stack.Screen name="Profile" component={Profile} /> */}
-//                             {/* <Stack.Screen name="SubmitItem" component={SubmitItem} /> */}
-//                         </>
-//                     ) : (
-//                         <>
-//                             <Stack.Screen name="Login" component={Login} />
-//                             <Stack.Screen name="Signup" component={Signup} />
-//                         </>
-//                     )}
-
-//                 </Stack.Navigator>
-//             </NavigationContainer> */}
+const styles = StyleSheet.create({
+    headerText: {
+        color: 'white',
+        fontSize: 26,
+        fontWeight: 'bold',
+        alignItems: 'center',
+        marginBottom: 5,
+    }
+})

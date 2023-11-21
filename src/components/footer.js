@@ -1,13 +1,15 @@
 import React from "react";
-import { View, Text } from '@gluestack-ui/themed'
+import { View, Text, Center } from '@gluestack-ui/themed'
 import { StyleSheet } from "react-native";
 
 export default function Footer() {
     return (
         <View style={styles.container}>
+            <Center >
             <Text style={styles.footerText}>
-                Blitz Bidding
+            &copy; Blitz Bidding
             </Text>
+            </Center>
         </View>
     )
 }
@@ -15,12 +17,14 @@ export default function Footer() {
 const styles = StyleSheet.create({
     container: {
         width: '100%',
-        height: '7%',
-        backgroundColor: "#D0BCD2",
-        paddingTop: 15,
+        height: '6%',
+        alignContent: 'center',
+        backgroundColor: "#8d6096",
+        paddingTop: 6,
     },
     footerText: {
-        fontSize: 20,
-        fontWeight: "bold",
+        fontSize: 15,
+        // fontWeight: "bold",
+        color: '#FFF'
     }
 })

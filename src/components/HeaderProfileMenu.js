@@ -12,7 +12,7 @@ export default function HeaderProfileMenu() {
       trigger={({ ...triggerProps }) => {
         return (
           <Pressable accessibilityLabel="User Profile Options" {...triggerProps}>
-            <Icon as={Ionicons} name="person" color='#FFF' size="lg" />
+            <Icon as={Ionicons} name="person" color='#FFFFFF' size="xl" />
           </Pressable>
         )
       }}
@@ -22,6 +22,7 @@ export default function HeaderProfileMenu() {
         <Icon as={AlertCircleIcon} size="sm" mr="$2" />
         <MenuItemLabel size="sm">My Profile</MenuItemLabel>
       </MenuItem>
+      
       <MenuItem key="Logout" textValue="Logout" onPress={() => navigation.navigate('Login')}>
         <Icon as={GlobeIcon} size="sm" mr="$2" />
         <MenuItemLabel size="sm">Logout</MenuItemLabel>

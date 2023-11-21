@@ -16,41 +16,44 @@ import Profile from './src/screens/Profile';
 
 const Stack = createNativeStackNavigator();
 
-const isAuth = true;
+// const isAuth = true;
 
-const AppContent = () => {
-    const { currentScreen } = useScreen();
-    const screenComponents = {
-        Login: <Login />,
-        Signup: <Signup />,
-        UserHome: <UserHome />,
-        AuctionRoomUser: <AuctionRoomUser />,
-        // Add other screens here 
-    };
-    return screenComponents[currentScreen] || <Text>Screen not found</Text>;
-};
+// const AppContent = () => {
+//     const { currentScreen } = useScreen();
+//     const screenComponents = {
+//         Login: <Login />,
+//         Signup: <Signup />,
+//         UserHome: <UserHome />,
+//         AuctionRoomUser: <AuctionRoomUser />,
+//         // Add other screens here 
+//     };
+//     return screenComponents[currentScreen] || <Text>Screen not found</Text>;
+// };
 
 const App = () => {
     return (
         <Provider store={store}>
             <GluestackUIProvider config={config}>
                 <ScreenProvider>
-                    <NavigationContainer>
-                        <Stack.Navigator headerMode="none">
-                            <Stack.Screen name="AppContent" component={AppContent} />
-                            <Stack.Screen name="UserHome" component={UserHome} />
-                            <Stack.Screen name="AuctionRoomUser" component={AuctionRoomUser} />
-                            <Stack.Screen name="Login" component={Login} />
-                            {/* <Stack.Screen name="MyAuction" component={MyAuction} /> */}
-                            <Stack.Screen name="Profile" component={Profile} />
-                            <Stack.Screen name="Signup" component={Signup} />
-                            {/* <Stack.Screen name="SubmitItem" component={SubmitItem} /> */}
-                        </Stack.Navigator>
-                        <Box flex={1}>
+                    <Box flex={1}>
+                        <NavigationContainer>
                             <BlitzHeader />
+                            <Stack.Navigator 
+                                screenOptions={{headerShown: false}}
+                            >
+                                {/* <Stack.Screen name="AppContent" component={AppContent} /> */}
+                                <Stack.Screen name="UserHome" component={UserHome} />
+                                <Stack.Screen name="AuctionRoomUser" component={AuctionRoomUser} />
+                                <Stack.Screen name="Login" component={Login} />
+                                {/* <Stack.Screen name="MyAuction" component={MyAuction} /> */}
+                                <Stack.Screen name="Profile" component={Profile} />
+                                <Stack.Screen name="Signup" component={Signup} />
+                                {/* <Stack.Screen name="SubmitItem" component={SubmitItem} /> */}
+                            </Stack.Navigator>
+                            {/* <AppContent /> */}
                             <Footer />
-                        </Box>
-                    </NavigationContainer>
+                        </NavigationContainer>
+                    </Box>
                 </ScreenProvider>
             </GluestackUIProvider>
         </Provider>

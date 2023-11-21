@@ -22,6 +22,7 @@ export default function HeaderProfileMenu() {
         <Icon as={AlertCircleIcon} size="sm" mr="$2" />
         <MenuItemLabel size="sm">My Profile</MenuItemLabel>
       </MenuItem>
+      
       <MenuItem key="Logout" textValue="Logout" onPress={() => navigation.navigate('Login')}>
         <Icon as={GlobeIcon} size="sm" mr="$2" />
         <MenuItemLabel size="sm">Logout</MenuItemLabel>

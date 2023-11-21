@@ -1,13 +1,15 @@
 import React from "react";
-import { View, Text } from '@gluestack-ui/themed'
+import { View, Text, Center } from '@gluestack-ui/themed'
 import { StyleSheet } from "react-native";
 
 export default function Footer() {
     return (
         <View style={styles.container}>
+            <Center >
             <Text style={styles.footerText}>
-                Blitz Bidding
+            &copy; Blitz Bidding
             </Text>
+            </Center>
         </View>
     )
 }
@@ -20,7 +22,8 @@ const styles = StyleSheet.create({
         paddingTop: 15,
     },
     footerText: {
-        fontSize: 20,
-        fontWeight: "bold",
+        fontSize: 15,
+        // fontWeight: "bold",
+        color: '#FFF'
     }
 })

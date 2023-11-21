@@ -21,7 +21,7 @@ const UserHomeScreen = ({ navigation }) => {
 
     useEffect(() => {
         dispatch(setItems());
-        console.log(items)
+        //console.log(items)
     }, [])
 
     //{item.picture}

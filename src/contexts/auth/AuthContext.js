@@ -5,6 +5,7 @@ export const AuthContext = createContext(null);
 
 function AuthProvider( props ) {
 
+
     const [isLoggedIn, setIsLoggedIn] = useState(true); // set to false if we get auth set up
     const [user, setUser] = useState({ username: 'josh', role: 'user' }); // setting a default user here for testing. set to {} if we get auth set up
     const [error, setError] = useState(null);

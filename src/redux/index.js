@@ -2,7 +2,6 @@ import { applyMiddleware, combineReducers, configureStore } from '@reduxjs/toolk
 import auctionReducer from './Auction';
 //import logger from './middlewares/logger';
 
-
 const rootReducer = combineReducers({
     auction: auctionReducer,
   });

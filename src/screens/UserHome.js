@@ -1,11 +1,5 @@
 import React, { useEffect } from 'react';
-import { SafeAreaView, 
-         View, 
-         Text, 
-         Button, 
-         Image, 
-         Dimensions,
-         StyleSheet } from 'react-native';
+import { SafeAreaView, View, Text, Button, Image, Dimensions, StyleSheet } from 'react-native';
 //import Carousel from 'react-native-snap-carousel';
 
 import { useSelector, useDispatch } from 'react-redux';
@@ -52,8 +46,8 @@ const UserHomeScreen = ({ navigation }) => {
     return (
         <SafeAreaView>
 
-            <Button title="Join Auction" onPress={() => navigation.navigate('AuctionRoomUser')} />
-            <Button title="Submit Item" onPress={() => navigation.navigate('SubmitItem')} />
+            <Button title="Join Auction" onPress={() => onNavigate('AuctionRoomUser')} />
+            <Button title="Submit Item" onPress={() => onNavigate('SubmitItem')} />
         </SafeAreaView>
     );
 };
@@ -93,4 +87,4 @@ const styles = StyleSheet.create({
     }
   })
 
-export default UserHomeScreen;
+export default UserHome;

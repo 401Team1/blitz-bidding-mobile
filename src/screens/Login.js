@@ -1,18 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { SafeAreaView, Text, TextInput, Button, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useScreen } from '../contexts/ScreenContext';
+import { AuthContext } from '../contexts/auth/AuthContext';
 
-const LoginScreen = () => {
+const Login = ({ onNavigate }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const navigation = useNavigation();
+    const { setRole, navigate } = useScreen();
+    const { login } = useContext(AuthContext); //auth.user.username
 
     const handleLogin = () => {
         // Implement login logic
         // On successful login, navigate to UserHome
-        navigation.navigate('UserHome');
+        onNavigate('UserHome');
     };
 
+        if (username === "admin" && password === "admin") {
+            navigate('AdminHome');
+        } else {           
+            navigate('UserHome');
+        }
+    };
+//            <Button title="Admin Login Test" onPress={navigate('AdminHome')} />
     return (
         <SafeAreaView>
             <TextInput
@@ -27,6 +36,7 @@ const LoginScreen = () => {
                 onChangeText={setPassword}
             />
             <Button title="Login" onPress={handleLogin} />
+
             <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
                 <Text>Don't have an account? Sign Up</Text>
             </TouchableOpacity>
@@ -34,4 +44,4 @@ const LoginScreen = () => {
     );
 };
 
-export default LoginScreen;
+export default Login;

@@ -1,9 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import store from './src/redux';
-import { GluestackUIProvider, Box } from "@gluestack-ui/themed";
+import { GluestackUIProvider, Box, Text } from "@gluestack-ui/themed";
 import { config } from "@gluestack-ui/config";
 import { ScreenProvider, useScreen } from './src/contexts/ScreenContext';
 import AuthProvider from './src/contexts/auth/AuthContext.js';
@@ -11,27 +9,18 @@ import BlitzHeader from './src/components/BlitzHeader';
 import Footer from './src/components/footer.js';
 import Login from './src/screens/Login';
 import Signup from './src/screens/Signup';
+import AdminHome from './src/screens/AdminHome';
 import UserHome from './src/screens/UserHome';
 import AuctionRoomUser from './src/screens/AuctionRoomUser';
+import { NavigationContainer } from '@react-navigation/native';
+
+import AuthProvider from './src/contexts/auth/AuthContext'
+
 import Profile from './src/screens/Profile';
 
-const Stack = createNativeStackNavigator();
-
-// const isAuth = true;
-
-// const AppContent = () => {
-//     const { currentScreen } = useScreen();
-//     const screenComponents = {
-//         Login: <Login />,
-//         Signup: <Signup />,
-//         UserHome: <UserHome />,
-//         AuctionRoomUser: <AuctionRoomUser />,
-//         // Add other screens here 
-//     };
-//     return screenComponents[currentScreen] || <Text>Screen not found</Text>;
-// };
-
 const App = () => {
+    const [currentScreen, setCurrentScreen] = useState('Login');
+
     return (
         <AuthProvider>
             <Provider store={store}>

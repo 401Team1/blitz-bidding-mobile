@@ -18,7 +18,7 @@ const Login = () => {
             navigate('UserHome');
         }
     };
-
+//            <Button title="Admin Login Test" onPress={navigate('AdminHome')} />
     return (
         <SafeAreaView>
             <TextInput
@@ -33,6 +33,7 @@ const Login = () => {
                 onChangeText={setPassword}
             />
             <Button title="Login" onPress={handleLogin} />
+
             <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
                 <Text>Don't have an account? Sign Up</Text>
             </TouchableOpacity>

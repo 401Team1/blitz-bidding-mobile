@@ -17,9 +17,10 @@ export default function Footer() {
 const styles = StyleSheet.create({
     container: {
         width: '100%',
-        height: '7%',
-        backgroundColor: "#D0BCD2",
-        paddingTop: 15,
+        height: '6%',
+        alignContent: 'center',
+        backgroundColor: "#8d6096",
+        paddingTop: 6,
     },
     footerText: {
         fontSize: 15,

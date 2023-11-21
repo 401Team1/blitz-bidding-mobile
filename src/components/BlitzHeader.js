@@ -17,12 +17,12 @@ export default function BlitzHeader() {
 
     return (
         <>
-            <StatusBar backgroundColor='#D0BCD2' />
-            <SafeAreaView backgroundColor='#D0BCD2'>
+            <StatusBar backgroundColor='#7e5287' />
+            <SafeAreaView backgroundColor='#7e5287'>
                 <HStack
                     justifyContent="space-between"
                     alignItems="center"
-                    backgroundColor="#D0BCD2"
+                    backgroundColor="#8d6096"
                     px={10}
                     py={5}
                 >

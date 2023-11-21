@@ -7,7 +7,7 @@ import { HStack } from '@gluestack-ui/themed';
 import HeaderMenu from './HeaderMenu';
 import HeaderProfileMenu from './HeaderProfileMenu';
 
-const Header = () => {
+export default function BlitzHeader() {
     const navigation = useNavigation();
 
     const handleUserHomePress = () => {
@@ -32,7 +32,6 @@ const Header = () => {
     );
 };
 
-export default Header;
 
 
 // {/* <NavigationContainer>

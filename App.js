@@ -6,7 +6,7 @@ import store from './src/redux';
 import { GluestackUIProvider, Box } from "@gluestack-ui/themed";
 import { config } from "@gluestack-ui/config";
 import { ScreenProvider, useScreen } from './src/contexts/ScreenContext';
-import Header from './src/components/header';
+import BlitzHeader from './src/components/BlitzHeader';
 import Footer from './src/components/Footer';
 import Login from './src/screens/Login';
 import Signup from './src/screens/Signup';
@@ -15,6 +15,8 @@ import AuctionRoomUser from './src/screens/AuctionRoomUser';
 import Profile from './src/screens/Profile';
 
 const Stack = createNativeStackNavigator();
+
+const isAuth = true;
 
 const AppContent = () => {
     const { currentScreen } = useScreen();
@@ -45,7 +47,7 @@ const App = () => {
                             {/* <Stack.Screen name="SubmitItem" component={SubmitItem} /> */}
                         </Stack.Navigator>
                         <Box flex={1}>
-                            <Header />
+                            <BlitzHeader />
                             <Footer />
                         </Box>
                     </NavigationContainer>

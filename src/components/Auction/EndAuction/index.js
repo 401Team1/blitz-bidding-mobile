@@ -12,7 +12,7 @@ export default EndAuction = ({ dispatch, style }) => {
 
     return (
         <>
-            <Button title="End Auction" onPress={handleEndAuction} />
+            <Button title="End Auction" color='black' onPress={handleEndAuction} />
         </>
     )
 }

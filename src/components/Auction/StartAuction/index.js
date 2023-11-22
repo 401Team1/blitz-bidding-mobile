@@ -12,7 +12,7 @@ export default StartAuction = ({ dispatch, style }) => {
 
     return (
         <>
-            <Button title="Start Auction" onPress={handleStartAuction} />
+            <Button title="Start Auction" color='black' onPress={handleStartAuction} />
         </>
     )
 }

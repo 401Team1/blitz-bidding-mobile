@@ -37,7 +37,7 @@ function UserMenu(props) {
       <MenuItem 
       key="MyAuctions"
       textValue="MyAuctions"
-      onPress={() => console.log("MyAuctions")}
+      onPress={() => handlePress("MyAuctions")}
       >
         <MenuItemLabel size="sm">My Auctions</MenuItemLabel>
       </MenuItem>
@@ -48,7 +48,7 @@ function UserMenu(props) {
       <MenuItem 
       key="SubmitItem"
       textValue="SubmitItem"
-      onPress={() => console.log("SubmitItem")}
+      onPress={() => handlePress("SubmitItem")}
       >
         <MenuItemLabel size="sm">Submit an Item</MenuItemLabel>
       </MenuItem>

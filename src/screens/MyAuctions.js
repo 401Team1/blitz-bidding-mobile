@@ -75,3 +75,48 @@
 // });
 
 // export default MyAuctions;
+
+import React from 'react';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
+
+const MyAuctions = () => {
+  return (
+    <ScrollView style={styles.container}>
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>Pending Items</Text>
+        {/* Display pending items here */}
+      </View>
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>Approved Items</Text>
+        {/* Display approved items here */}
+      </View>
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>Items Sold</Text>
+        {/* Display sold items here */}
+      </View>
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>Auctions Won</Text>
+        {/* Display won auctions here */}
+      </View>
+    </ScrollView>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 16,
+  },
+  section: {
+    marginBottom: 20,
+  },
+  sectionTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 10,
+    borderWidth: 5,
+    borderColor: '#7e5287',
+  },
+});
+
+export default MyAuctions;

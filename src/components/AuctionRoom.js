@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     },
     input: {
         borderWidth: 1,
-        borderColor: 'gray',
+        borderColor: 'black',
         padding: 10,
         borderRadius: 20,
         marginBottom: 10,
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     chatContainer: {
         flex: 1,
         borderWidth: 5,
-        width: 400,
+        width: 350,
         borderColor: '#8d6096',
         borderRadius: 10,
         padding: 5,

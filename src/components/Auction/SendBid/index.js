@@ -19,7 +19,7 @@ export default SendBid = ({ dispatch, style }) => {
                 onChangeText={setBid}
                 placeholder="Enter amount..."
             />
-            <Button title="Bid" onPress={handleBid} />
+            <Button title="Bid" color='black' onPress={handleBid} />
         </>
     )
 }

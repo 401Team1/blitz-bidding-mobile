@@ -14,6 +14,9 @@ import Signup from './src/screens/Signup';
 import AdminHome from './src/screens/AdminHome';
 import UserHome from './src/screens/UserHome';
 import AuctionRoomUser from './src/screens/AuctionRoomUser';
+import AuctionRoomAdmin from './src/screens/AuctionRoomAdmin.js';
+import MyAuctions from './src/screens/MyAuctions.js';
+import SubmitItem from './src/screens/SubmitItem.js';
 import Profile from './src/screens/Profile';
 
 import AuthProvider from './src/contexts/auth/AuthContext'
@@ -35,17 +38,16 @@ const App = () => {
                                 <Stack.Navigator 
                                     screenOptions={{headerShown: false}}
                                 >
-                                    {/* <Stack.Screen name="AppContent" component={AppContent} /> */}
                                     <Stack.Screen name="Login" component={Login} />
                                     <Stack.Screen name="UserHome" component={UserHome} />
                                     <Stack.Screen name="AdminHome" component={AdminHome} />
                                     <Stack.Screen name="AuctionRoomUser" component={AuctionRoomUser} />
-                                    {/* <Stack.Screen name="MyAuction" component={MyAuction} /> */}
+                                    <Stack.Screen name="AuctionRoomAdmin" component={AuctionRoomAdmin} />
+                                    <Stack.Screen name="MyAuctions" component={MyAuctions} />
                                     <Stack.Screen name="Profile" component={Profile} />
                                     <Stack.Screen name="Signup" component={Signup} />
-                                    {/* <Stack.Screen name="SubmitItem" component={SubmitItem} /> */}
+                                    <Stack.Screen name="SubmitItem" component={SubmitItem} />
                                 </Stack.Navigator>
-                                {/* <AppContent /> */}
                                 <Footer />
                             </NavigationContainer>
                         </Box>

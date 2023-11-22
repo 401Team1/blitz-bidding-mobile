@@ -68,10 +68,10 @@ const styles = StyleSheet.create({
         alignSelf: 'flex-end',
     },
     messageBubbleSelf: {
-        backgroundColor: '#8d6096',
+        backgroundColor: 'white',
     },
     messageBubbleOther: {
-        backgroundColor: '#f0f0f0',
+        backgroundColor: 'white',
         alignSelf: 'flex-start',
     },
     username: {
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     },
     message: {
         marginTop: 5,
-        color: 'white',
+        color: 'black',
     },
     inputContainer : {
         flexDirection: 'row',

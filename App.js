@@ -1,5 +1,5 @@
-import React, { useState, useContext } from 'react';
-import { GluestackUIProvider, Box, Text } from "@gluestack-ui/themed";
+import React, { useState } from 'react';
+import { GluestackUIProvider, Box } from "@gluestack-ui/themed";
 import { config } from "@gluestack-ui/config";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -11,29 +11,19 @@ import BlitzHeader from './src/components/BlitzHeader';
 import Footer from './src/components/footer.js';
 import Login from './src/screens/Login';
 import Signup from './src/screens/Signup';
-
-
-import AdminHome from './src/screens/AdminHome'; // uncomment once screen is ready
+import AdminHome from './src/screens/AdminHome';
 import UserHome from './src/screens/UserHome';
 import AuctionRoomUser from './src/screens/AuctionRoomUser';
+import Profile from './src/screens/Profile';
 
 import AuthProvider from './src/contexts/auth/AuthContext'
 import { ScreenProvider, useScreen } from './src/contexts/ScreenContext';
-
-import Profile from './src/screens/Profile';
-import { createContext } from 'react';
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
     const [currentScreen, setCurrentScreen] = useState('Login');
-    const auth = createContext(AuthProvider)
 
-    /*
-                                {
-                                    !auth.isLoggedIn ? <Text>This is some text.</Text> : null
-                                }
-    */
     return (
         <AuthProvider>
             <Provider store={store}>

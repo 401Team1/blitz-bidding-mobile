@@ -3,17 +3,20 @@ import { SafeAreaView, Text, Flatlist, Button, TouchableOpacity } from 'react-na
 import { useNavigation } from '@react-navigation/native';
 import { FlatList } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
-import { approveItem } from '../redux/Item';
+//import { approveItem } from '../redux/Item';
 
 const AdminHome = () => {
     const dispatch = useDispatch();
-    const { items } = useSelector(state => state.item);
+    //const { items } = useSelector(state => state.item);
     const navigation = useNavigation();
 
+    /*
     const handleApprove = (itemIdObj) => {
         dispatch(approveItem( itemIdObj ));
     };
+    */
 
+    /*
     const renderItem = ({ item }) => {
         if (item.status !== 'approved') {
             return (
@@ -26,13 +29,9 @@ const AdminHome = () => {
         }
         return null;
     };
+    */
     return (
         <SafeAreaView style={{ flex:1 }}>
-            <FlatList
-                data={items}
-                keyExtractor={item => item.id}
-                renderItem={renderItem}
-            />
             <TouchableOpacity onPress={() => navigation.navigate('AuctionRoomAdmin')}>
                 <Text>Join Auction</Text>
             </TouchableOpacity>
@@ -41,3 +40,12 @@ const AdminHome = () => {
 };
 
 export default AdminHome;
+
+/*
+            <FlatList
+                data={items}
+                keyExtractor={item => item.id}
+                renderItem={renderItem}
+            />
+
+*/

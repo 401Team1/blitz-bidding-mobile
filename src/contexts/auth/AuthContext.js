@@ -1,4 +1,5 @@
 import { createContext, useState } from 'react';
+import { State } from 'react-native-gesture-handler';
 //import { jwtDecode } from 'jwt-decode';
 
 export const AuthContext = createContext(null);
@@ -11,9 +12,9 @@ function AuthProvider( props ) {
 
     const login = (username, password) => {
       let defaultUserObj = { username, 
-                              'location': 'Seattle, WA', 
-                              'email': 'user@gmail.com',
-                              'role': 'user'
+                              'location': user.location || 'Seattle, WA', 
+                              'email': user.email || 'user@gmail.com',
+                              'role': user.role || 'user'
                           };
   
       if (username.toLowerCase() === 'admin') {
@@ -50,13 +51,23 @@ function AuthProvider( props ) {
         setUser( updateUserObj );
     }
 
+    const signup = (username, email, password, location) => {
+      let newUserDetails = {
+        username: username || user.username,
+        email: email || user.email,
+        password: password || user.password,
+        location: location || user.location
+      }
+      setUser( newUserDetails );
+    }
+
     const logout = () => {
       setUser(null);
       setIsLoggedIn(false);
     }
   
     return (
-      <AuthContext.Provider value={{ login, logout, user, isLoggedIn, error, capabilities }}>
+      <AuthContext.Provider value={{ login, logout, signup, updateProfile , user, isLoggedIn, error, capabilities }}>
         { props.children }
       </AuthContext.Provider>
     )

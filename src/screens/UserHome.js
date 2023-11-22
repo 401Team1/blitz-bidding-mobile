@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { SafeAreaView, View, Text, Button, Image, Dimensions, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 //import Carousel from 'react-native-snap-carousel';
 
 import { useSelector, useDispatch } from 'react-redux';
@@ -8,7 +9,8 @@ import { useSelector, useDispatch } from 'react-redux';
 export const SLIDER_WIDTH = Dimensions.get('window').width + 80
 export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7)
 
-const UserHome = ({ navigation }) => {
+const UserHome = () => {
+  const navigation = useNavigation();
     //const { items, currentAuctionItem } = useSelector(state => state.item);
     //const dispatch = useDispatch(); // just leaving it here for now.
 
@@ -46,8 +48,8 @@ const UserHome = ({ navigation }) => {
     return (
         <SafeAreaView>
 
-            <Button title="Join Auction" onPress={() => onNavigate('AuctionRoomUser')} />
-            <Button title="Submit Item" onPress={() => onNavigate('SubmitItem')} />
+            <Button title="Join Auction" onPress={() => navigation.navigate('AuctionRoomUser')} />
+            <Button title="Submit Item" onPress={() => navigation.navigate('SubmitItem')} />
         </SafeAreaView>
     );
 };

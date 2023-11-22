@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Menu, MenuItem, MenuItemLabel, Icon, Pressable, GlobeIcon, AlertCircleIcon } from '@gluestack-ui/themed';
 import { useNavigation } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
-
+import { AuthContext } from "../contexts/auth/AuthContext";
 
 export default function HeaderProfileMenu() {
 
   const navigation = useNavigation();
+  const { logout } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logout();
+    navigation.navigate('Login')
+  }
+
   return (
     <Menu
       trigger={({ ...triggerProps }) => {
@@ -23,7 +30,7 @@ export default function HeaderProfileMenu() {
         <MenuItemLabel size="sm">My Profile</MenuItemLabel>
       </MenuItem>
       
-      <MenuItem key="Logout" textValue="Logout" onPress={() => navigation.navigate('Login')}>
+      <MenuItem key="Logout" textValue="Logout" onPress={ () => handleLogout() }>
         <Icon as={GlobeIcon} size="sm" mr="$2" />
         <MenuItemLabel size="sm">Logout</MenuItemLabel>
       </MenuItem>

@@ -6,15 +6,15 @@ export const AuthContext = createContext(null);
 
 function AuthProvider( props ) {
     const [isLoggedIn, setIsLoggedIn] = useState(false); // set to false if we get auth set up
-    const [user, setUser] = useState({ username: 'josh', role: 'user' }); // setting a default user here for testing. set to {} if we get auth set up
+    const [user, setUser] = useState(null); // setting a default user here for testing. set to {} if we get auth set up
     const [error, setError] = useState(null);
     const [capabilities, setCapabilities] = useState(null);
 
     const login = (username, password) => {
       let defaultUserObj = { username, 
-                              'location': user.location || 'Seattle, WA', 
-                              'email': user.email || 'user@gmail.com',
-                              'role': user.role || 'user'
+                              'location': user !== null ? user.location : 'Seattle, WA', 
+                              'email': user !== null ? user.email : 'user@gmail.com',
+                              'role': 'user'
                           };
   
       if (username.toLowerCase() === 'admin') {

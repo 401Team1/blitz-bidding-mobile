@@ -20,7 +20,7 @@ const Login = ({ onNavigate }) => {
         } else {           
             navigate('UserHome');
         }
-    };
+    
 //            <Button title="Admin Login Test" onPress={navigate('AdminHome')} />
     return (
         <SafeAreaView>

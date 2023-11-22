@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, ScrollView, View, Text, TextInput, Button } from 'react-native';
 import { connect } from 'react-redux';
-import { sendMessage } from '../redux/auction/index';
+import { sendMessage } from '../redux/Auction/index';
 
 const ChatWindow = ({ messages, dispatch }) => {
     const [message, setMessage] = useState('');

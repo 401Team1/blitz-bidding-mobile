@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import AuctionRoom from '../components/AuctionRoom';
 import { useSelector, useDispatch } from 'react-redux';
-import { startAuction, auctionEnded } from '../redux/auction/index';
+import { startAuction, auctionEnded } from '../redux/Auction/index';
 
 const AuctionRoomAdmin = () => {
     const { currentItem, nextItem, maxBid } = useSelector(state => state.auction);

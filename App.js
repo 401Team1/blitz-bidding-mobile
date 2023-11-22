@@ -6,7 +6,7 @@ import { config } from "@gluestack-ui/config";
 import { ScreenProvider, useScreen } from './src/contexts/ScreenContext';
 import AuthProvider from './src/contexts/auth/AuthContext.js';
 import BlitzHeader from './src/components/BlitzHeader';
-import Footer from './src/components/footer.js';
+import Footer from './src/components/Footer.js';
 import Login from './src/screens/Login';
 import Signup from './src/screens/Signup';
 import AdminHome from './src/screens/AdminHome';
@@ -14,7 +14,7 @@ import UserHome from './src/screens/UserHome';
 import AuctionRoomUser from './src/screens/AuctionRoomUser';
 import { NavigationContainer } from '@react-navigation/native';
 
-import AuthProvider from './src/contexts/auth/AuthContext'
+// import AuthProvider from './src/contexts/auth/AuthContext'
 
 import Profile from './src/screens/Profile';
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, ScrollView, View, Text, TextInput, Button } from 'react-native';
 import { connect } from 'react-redux';
-import { startAuction } from '../../../redux/auction/index';
+import { startAuction } from '../../../redux/Auction/index';
 
 export default StartAuction = ({ dispatch, style }) => {
     //const [bid, setBid] = useState(0);

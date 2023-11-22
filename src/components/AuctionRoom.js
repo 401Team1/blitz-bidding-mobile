@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { SafeAreaView, Text, StyleSheet } from 'react-native';
+import { SafeAreaView, Text, StyleSheet, View } from 'react-native';
 import ChatWindow from './ChatWindow';
 import SendBid from './Auction/SendBid'
 import { useSelector, useDispatch } from 'react-redux';
+import { VStack, Heading, Button, ButtonText } from '@gluestack-ui/themed';
 
 import { startAuction, endAuction } from '../redux/Auction/index';
 import StartAuction from './Auction/StartAuction/index';
@@ -59,8 +60,10 @@ const AuctionRoom = () => {
     return (
         <SafeAreaView style={styles.container}>
             <Text style={styles.timer}>Time left: {formatTime(timer)}</Text>
-            <ChatWindow />
-            <SendBid dispatch={dispatch} style={ styles.input } />
+            <View style={styles.chatContainer}>
+                <ChatWindow />
+            </View>
+            <SendBid dispatch={dispatch} style={styles.input} />
             <StartAuction dispatch={dispatch} />
             <EndAuction dispatch={dispatch} />
         </SafeAreaView>
@@ -83,6 +86,15 @@ const styles = StyleSheet.create({
         padding: 10,
         borderRadius: 20,
         marginBottom: 10,
+    },
+    chatContainer: {
+        flex: 1,
+        borderWidth: 5,
+        width: 400,
+        borderColor: '#8d6096',
+        borderRadius: 10,
+        padding: 5,
+        marginVertical: 10,
     },
 });
 

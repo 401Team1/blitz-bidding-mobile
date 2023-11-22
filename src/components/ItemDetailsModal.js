@@ -1,7 +1,15 @@
 import React from 'react';
-import { SafeAreaView,View, Text, TouchableOpacity, Modal, Image, StyleSheet } from 'react-native';
+import { SafeAreaView,View, Text, TouchableOpacity, Modal, StyleSheet } from 'react-native';
+import { Image } from '@gluestack-ui/themed';
 
-const ItemDetailModal = ({ currentItem, visible, onClose }) => {
+const pics = {
+    'aabbccdd112233': require('../images/pikachu.jpg'),
+    'aabbccdd223344': require('../images/twilight.jpg'),
+    'hghwqtoos234': require('../images/pearl_earring.jpg'),
+    'spdr13513588': require('../images/spiderman.jpg'),
+}
+
+const ItemDetailModal = ({ currentItem, picture, visible, onClose }) => {
     return (
         <Modal
             visible={visible}
@@ -12,8 +20,9 @@ const ItemDetailModal = ({ currentItem, visible, onClose }) => {
             <SafeAreaView style={styles.modalOverlay}>
                 <SafeAreaView style={styles.modalContent}>
                     <Image
-                        source={currentItem ? { uri: currentItem.picture } : require('../../assets/images/placeholder-image.png')}
-                        syle={styles.image}
+                        source={ pics[currentItem.id] }
+                        style={styles.image}
+                        alt={'picture of auction'}
                     />
                     <Text style={styles.currentItemName}>{currentItem?.name}</Text>
                     <Text>{currentItem?.description}</Text>
@@ -53,16 +62,16 @@ const styles = StyleSheet.create({
         height: 200, // fixed height for the image
         borderRadius: 10,
     },
-    currentItemName: {
-        fontWeight: 'bold',
-        fontSize: 18,
-        marginTop: 10,
-    },
     closeButton: {
         marginTop: 10,
         backgroundColor: '#e0e0e0',
         padding: 10,
         borderRadius: 5,
         alignSelf: 'flex-end',
+    },
+    currentItemName: {
+        fontWeight: 'bold',
+        fontSize: 18,
+        marginTop: 10,
     },
 });

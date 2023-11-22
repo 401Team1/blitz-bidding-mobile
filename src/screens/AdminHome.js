@@ -84,7 +84,7 @@ const AdminHome = () => {
         </View>
       </ScrollView>
       <View style={styles.bottomButton}>
-        <Button title="Join Auction" color='black' onPress={() => navigation.navigate('AuctionRoomAdmin')} />
+        <Button title="Join Auction" color='black' onPress={() => navigation.navigate('AuctionRoom')} />
       </View>
     </SafeAreaView>
   );

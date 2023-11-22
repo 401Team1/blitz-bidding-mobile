@@ -3,7 +3,7 @@
       "status":"approved",
       "name": "SUPER RARE POKEMON CARD",
       "description": "It''s super rare..",
-      "picture": "../redux/data/images/pikachu.jpg",
+      "picture": "../images/pikachu.jpg",
       "seller": "SomeUser123",
       "reserve": 150
     },
@@ -11,7 +11,7 @@
       "status":"approved",
       "name": "Signed copy of Twilight",
       "description": "Signed by those actors in it",
-      "picture": "../redux/data/images/twilight.jpg",
+      "picture": "../images/twilight.jpg",
       "seller": "SomeUser123",
       "reserve": 250
     },
@@ -19,7 +19,7 @@
         "status": "approved",
         "name":"Amazing Fantasy #15",
         "description":"First appearance of Spider-Man",
-        "picture": "../redux/data/images/spiderman.jpg",
+        "picture": "../images/spiderman.jpg",
         "seller": "josh1234",
         "reserve": 15000000
     },
@@ -27,7 +27,7 @@
         "status": "approved",
         "name":"Girl with Pearl Earring",
         "description":"A pretty famous painting",
-        "picture": "../redux/data/images/pearl_earring.jpg",
+        "picture": "../images/pearl_earring.jpg",
         "seller": "josh1234",
         "reserve": 150000000
     }

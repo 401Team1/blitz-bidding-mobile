@@ -13,7 +13,7 @@ import Login from './src/screens/Login';
 import Signup from './src/screens/Signup';
 
 
-//import AdminHome from './src/screens/AdminHome'; // uncomment once screen is ready
+import AdminHome from './src/screens/AdminHome'; // uncomment once screen is ready
 import UserHome from './src/screens/UserHome';
 import AuctionRoomUser from './src/screens/AuctionRoomUser';
 
@@ -21,12 +21,19 @@ import AuthProvider from './src/contexts/auth/AuthContext'
 import { ScreenProvider, useScreen } from './src/contexts/ScreenContext';
 
 import Profile from './src/screens/Profile';
+import { createContext } from 'react';
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
     const [currentScreen, setCurrentScreen] = useState('Login');
+    const auth = createContext(AuthProvider)
 
+    /*
+                                {
+                                    !auth.isLoggedIn ? <Text>This is some text.</Text> : null
+                                }
+    */
     return (
         <AuthProvider>
             <Provider store={store}>
@@ -39,9 +46,10 @@ const App = () => {
                                     screenOptions={{headerShown: false}}
                                 >
                                     {/* <Stack.Screen name="AppContent" component={AppContent} /> */}
-                                    <Stack.Screen name="UserHome" component={UserHome} />
-                                    <Stack.Screen name="AuctionRoomUser" component={AuctionRoomUser} />
                                     <Stack.Screen name="Login" component={Login} />
+                                    <Stack.Screen name="UserHome" component={UserHome} />
+                                    <Stack.Screen name="AdminHome" component={AdminHome} />
+                                    <Stack.Screen name="AuctionRoomUser" component={AuctionRoomUser} />
                                     {/* <Stack.Screen name="MyAuction" component={MyAuction} /> */}
                                     <Stack.Screen name="Profile" component={Profile} />
                                     <Stack.Screen name="Signup" component={Signup} />

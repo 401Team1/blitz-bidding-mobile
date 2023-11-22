@@ -3,6 +3,8 @@ import { SafeAreaView, Text, TextInput, Button, TouchableOpacity } from 'react-n
 import { useScreen } from '../contexts/ScreenContext';
 import { AuthContext } from '../contexts/auth/AuthContext';
 
+//            <Button title="Admin Login Test" onPress={navigate('AdminHome')} />
+
 const Login = ({ onNavigate }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -13,15 +15,14 @@ const Login = ({ onNavigate }) => {
         // Implement login logic
         // On successful login, navigate to UserHome
         onNavigate('UserHome');
-    };
 
         if (username === "admin" && password === "admin") {
-            navigate('AdminHome');
+            //navigate('AdminHome');
         } else {           
             navigate('UserHome');
         }
     };
-//            <Button title="Admin Login Test" onPress={navigate('AdminHome')} />
+
     return (
         <SafeAreaView>
             <TextInput

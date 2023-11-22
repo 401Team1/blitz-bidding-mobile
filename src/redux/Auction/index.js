@@ -2,10 +2,6 @@ import { createSlice } from '@reduxjs/toolkit';
 import mockMessageData from '../data/json/mockMsgData.json';
 import mockItemData from '../data/json/mockItemData.json';
 
-import { createSlice } from '@reduxjs/toolkit';
-import mockMessageData from '../data/json/mockMsgData.json';
-import mockItemData from '../data/json/mockItemData.json';
-
 let mockItems = [...mockItemData];
 
 function formatDateNow() {

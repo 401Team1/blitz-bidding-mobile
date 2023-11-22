@@ -8,7 +8,7 @@ import { useSelector, useDispatch } from 'react-redux';
 export const SLIDER_WIDTH = Dimensions.get('window').width + 80
 export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7)
 
-const UserHomeScreen = ({ navigation }) => {
+const UserHome = ({ navigation }) => {
     //const { items, currentAuctionItem } = useSelector(state => state.item);
     //const dispatch = useDispatch(); // just leaving it here for now.
 

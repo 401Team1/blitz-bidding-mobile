@@ -4,7 +4,7 @@ import ChatWindow from './ChatWindow';
 import SendBid from './Auction/SendBid'
 import { useSelector, useDispatch } from 'react-redux';
 
-import { startAuction, endAuction } from '../redux/auction/index';
+import { startAuction, endAuction } from '../redux/Auction/index';
 import StartAuction from './Auction/StartAuction/index';
 import EndAuction from './Auction/EndAuction/index';
 

@@ -88,7 +88,7 @@ export default function HeaderMenu() {
   };
 
   const renderMenu = (user) => {
-    if (isLoggedIn && user) {
+    if (user) {
       return <UserMenu handlePress={handlePress} userRole={user.role} />;
     }
   };
